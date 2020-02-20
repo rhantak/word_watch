@@ -8,14 +8,16 @@ $(document).ready(() => {
     fetch(url)
       .then(response => response.json())
       .then(result => result["word"])
-      .then(word => targetElement.append(` ${Object.keys(word)}, ${Object.values(word)}`))
+      .then(word => targetElement.textContent=`Top word from Word Watch API: ${Object.keys(word)}, ${Object.values(word)}`)
   }
   findTopWord()
+
   var targetButton = document.getElementById('send-button')
+  targetButton.addEventListener('click', (e) => {
+    postWords(document.getElementById("user-words").value)
+  })
 
-  targetButton.addEventListener('click', (e) => postWords(document.getElementById("user-words").value))
-
-  function postWords(words){
+  async function postWords(words){
     console.log(words)
     var wordArray = words.split(" ")
     wordArray.forEach(word => {
@@ -25,6 +27,7 @@ $(document).ready(() => {
       },
         body: JSON.stringify({"word": { "value": `${word}` }})
       })
+      .then(words => findTopWord())
     })
   }
 })

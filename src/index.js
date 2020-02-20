@@ -2,7 +2,7 @@ import $ from 'jquery'
 
 $(document).ready(() => {
   function findTopWord() {
-    let url = 'http://localhost:3000/api/v1/top_word'
+    let url = 'https://wordwatch-api.herokuapp.com/api/v1/top_word'
     var targetElement = document.getElementById('top-word')
 
     fetch(url)
@@ -21,7 +21,7 @@ $(document).ready(() => {
     console.log(words)
     var wordArray = words.split(" ")
     wordArray.forEach(word => {
-      fetch('http://localhost:3000/api/v1/words', { method: 'POST',
+      fetch('https://wordwatch-api.herokuapp.com/api/v1/words', { method: 'POST',
         headers: {
         'Content-Type': 'application/json'
       },

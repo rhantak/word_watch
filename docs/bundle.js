@@ -83,7 +83,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(() => {
   function findTopWord() {
-    let url = 'http://localhost:3000/api/v1/top_word'
+    let url = 'https://wordwatch-api.herokuapp.com/api/v1/top_word'
     var targetElement = document.getElementById('top-word')
 
     fetch(url)
@@ -102,7 +102,7 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(() => {
     console.log(words)
     var wordArray = words.split(" ")
     wordArray.forEach(word => {
-      fetch('http://localhost:3000/api/v1/words', { method: 'POST',
+      fetch('https://wordwatch-api.herokuapp.com/api/v1/words', { method: 'POST',
         headers: {
         'Content-Type': 'application/json'
       },

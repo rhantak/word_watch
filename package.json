@@ -19,7 +19,7 @@
     "css-loader": "^0.28.4",
     "jquery": "^3.2.1",
     "jsdom": "^11.1.0",
-    "mocha": "^3.4.2",
+    "mocha": "^10.2.0",
     "mocha-webpack": "^0.7.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^6.0.6",
